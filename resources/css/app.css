@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../../node_modules/tw-elements/js/**/*.js';
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+@theme {
+    --font-Hind: "Hind", sans-serif;
+    --font-Poppins: "Poppins", sans-serif;
+    --color-primary: #000032;
+    --color-secondary: #00b67a;
+    --breakpoint-*: initial;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1536px;
+    --breakpoint-4xl: 1920px;
+}
+@layer base {
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
+    img,
+    video {
+        max-width: 100%;
+        height: revert-layer;
+    }
+    html {
+        scroll-padding-top: 70px;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden;
+        @apply font-Poppins;
+    }
+    section {
+        @apply py-[clamp(40px,5vw,80px)] relative;
+    }
+    a {
+        @apply transition-all no-underline;
+    }
+    [role="button"] {
+        @apply cursor-pointer;
+    }
+    p,
+    ul li {
+        @apply text-[#595959] font-Poppins font-normal leading-relaxed text-[clamp(15px,1.25vw,18px)];
+    }
+    p {
+        margin-bottom: 1rem;
+    }
+    button {
+        @apply cursor-pointer;
+    }
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        @apply text-primary mb-3 font-medium leading-tight font-Poppins;
+    }
+
+    h1,
+    .h1 {
+        @apply text-[clamp(1.3125rem,1.3125rem+2.5vw,3.3125rem)]
+          sm:text-[clamp(1.6875rem,1.6875rem+2vw,3.3125rem)]
+          lg:text-[clamp(2.0625rem,2.0625rem+1.5vw,3.3125rem)];
+    }
+
+    h2,
+    .h2 {
+        @apply text-[clamp(1.0625rem,1.0625rem+2.2vw,2.8125rem)]
+          sm:text-[clamp(1.3125rem,1.3125rem+1.8vw,2.8125rem)]
+          lg:text-[clamp(1.6875rem,1.6875rem+1.3vw,2.8125rem)];
+    }
+
+    h3,
+    .h3 {
+        @apply text-[clamp(0.9375rem,0.9375rem+2vw,2.3125rem)]
+          sm:text-[clamp(1.0625rem,1.0625rem+1.6vw,2.3125rem)]
+          lg:text-[clamp(1.3125rem,1.3125rem+1.1vw,2.3125rem)];
+    }
+
+    h4,
+    .h4 {
+        @apply text-[clamp(0.8125rem,0.8125rem+1.8vw,1.8125rem)]
+          sm:text-[clamp(0.9375rem,0.9375rem+1.4vw,1.8125rem)]
+          lg:text-[clamp(1.0625rem,1.0625rem+0.9vw,1.8125rem)];
+    }
+
+    h5,
+    .h5 {
+        @apply text-[clamp(0.6875rem,0.6875rem+1.6vw,1.5625rem)]
+          sm:text-[clamp(0.8125rem,0.8125rem+1.2vw,1.5625rem)]
+          lg:text-[clamp(0.9375rem,0.9375rem+0.7vw,1.5625rem)];
+    }
+
+    h6,
+    .h6 {
+        @apply text-[clamp(0.5625rem,0.5625rem+1.4vw,1.3125rem)]
+          sm:text-[clamp(0.6875rem,0.6875rem+1vw,1.3125rem)]
+          lg:text-[clamp(0.8125rem,0.8125rem+0.5vw,1.3125rem)];
+    }
+    .horizontal-scroll-none::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 0.6em;
+        background: rgb(224, 220, 220);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-primary);
+        border-radius: 100vw;
+        background-clip: content-box;
+    }
+}
+@layer utilities {
+    .container {
+        @apply px-3 w-full max-w-[100%] sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[clamp(1140px,90vw,1300px)] 2xl:max-w-[1366px] 4xl:max-w-[1723px] mx-auto;
+    }
+    @keyframes rotate624 {
+        0% {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+
+        25% {
+            transform: rotate(3deg) translate3d(0, 0, 0);
+        }
+
+        50% {
+            transform: rotate(-3deg) translate3d(0, 0, 0);
+        }
+
+        75% {
+            transform: rotate(1deg) translate3d(0, 0, 0);
+        }
+
+        100% {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes storm1261 {
+        0% {
+            transform: translate3d(0, 0, 0) translateZ(0);
+        }
+
+        25% {
+            transform: translate3d(4px, 0, 0) translateZ(0);
+        }
+
+        50% {
+            transform: translate3d(-3px, 0, 0) translateZ(0);
+        }
+
+        75% {
+            transform: translate3d(2px, 0, 0) translateZ(0);
+        }
+
+        100% {
+            transform: translate3d(0, 0, 0) translateZ(0);
+        }
+    }
+}
+
+@layer components {
+    .row {
+        @apply flex flex-wrap -mx-3 [&>div]:px-3 space-y-5 lg:space-y-0;
+    }
+    .btn {
+        @apply px-6 py-[clamp(8px,1.1vw,10px)] rounded-full inline-flex items-center gap-2 text-[clamp(14px,1vw,15px)] transition-all justify-center border-2 border-transparent font-semibold capitalize text-nowrap;
+        transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+        span.btn-span {
+            @apply z-20;
+        }
+        &:hover {
+            animation: rotate624 0.7s ease-in-out both;
+            span {
+                animation: storm1261 0.7s ease-in-out both;
+                animation-delay: 0.06s;
+            }
+        }
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white hover:bg-primary/90;
+    }
+    .btn-outline-primary {
+        @apply bg-transparent border border-primary text-white hover:bg-primary;
+    }
+    .btn-white {
+        @apply bg-white text-black border-white hover:bg-black hover:text-white hover:border-black;
+    }
+    .btn-black {
+        @apply bg-black text-white border-black hover:bg-white hover:text-black hover:border-white;
+    }
+    .btn-outline-white {
+        @apply bg-transparent text-black border-gray-200 hover:bg-primary hover:text-white hover:border-primary;
+    }
+    /* image filer */
+    .image-white {
+        filter: brightness(0) invert(1);
+    }
+    .image-dark {
+        filter: brightness(0);
+    }
+    .form-control {
+        @apply w-full px-4 py-3 border bg-[#F2F2F2] border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary;
+    }
+    /* .section-title {
+        @apply max-w-6xl mx-auto;
+        h2 {
+            @apply text-[clamp(30px,2.5vw,42px)] capitalize mb-2 font-Poppins text-primary font-bold;
+        }
+        p {
+            @apply text-[clamp(16px,2vw,18px)];
+        }
+    } */
+
+    .section-title {
+        @apply max-w-6xl mx-auto;
+    }
+
+    .section-title {
+        @apply text-[clamp(23px,2.3vw,42px)] capitalize mb-2 font-Poppins text-primary font-bold;
+    }
+
+    /* hero section */
+    .hero-banner {
+        @apply bg-no-repeat bg-center bg-cover min-h-[calc(100dvh-clamp(111px,12vw,111px))] overflow-hidden lg:py-4 z-10;
+    }
+}
+.stats > div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 35%;
+    width: 1px;
+    height: 60%;
+    background-color: #b9b9b9;
+    transform: translateY(-50%);
+    @media screen and (max-width: 991px) {
+        display: none;
+    }
+}
+.stats span {
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1;
+}
+.servicesSec h6 {
+    @apply text-[clamp(16px,1.6vw,30px)] font-Poppins font-bold;
+}
+
+.hover-service {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-service::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 182, 122, 0.6) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.hover-service:hover::after {
+    opacity: 1;
+}
+.hover-service:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+    border-color: #00b67a;
+}
+.hover-service h6 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
